@@ -1,7 +1,12 @@
 
+
+.page {
+    margin: auto;
+    width: 1000px;
+}
+
 .on {
     color: white;
-    width: 150px;
     background-color: black;
 }
 
@@ -9,13 +14,22 @@
     background-color: gray;
   }
 
-.container {
+.button-container {
       margin: auto;
       margin-top: 150px;
       text-align: center;
   }
 
-  
-#button2 {
+#button1, #button2 {
     width: 150px;
+}
+
+#text {
+    padding-top: 30px;
+    text-align: center;
+    display: none;
+}
+
+#paragraphe {
+    padding-top: 30px;
 }
