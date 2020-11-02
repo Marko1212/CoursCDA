@@ -1,0 +1,21 @@
+
+.on {
+    color: white;
+    width: 150px;
+    background-color: black;
+}
+
+.off {
+    background-color: gray;
+  }
+
+.container {
+      margin: auto;
+      margin-top: 150px;
+      text-align: center;
+  }
+
+  
+#button2 {
+    width: 150px;
+}
