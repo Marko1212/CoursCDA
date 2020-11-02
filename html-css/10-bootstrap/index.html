@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Marko Askovic</title>
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <!--on choisit la regular et bold font family Montserrat; le bold est alors de meilleure qualité, ressemble plus à la maquette -->
+    <!--font awesome-->
+    <link
+      rel="stylesheet"
+      href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <nav
+      class="navbar navbar-expand-lg text-uppercase navbar-dark bg-dark pt-4 pb-4"
+    >
+      <!--pt-1 : padding top 0.25 rem; pb-1 : padding bottom 0.25 rem; -->
+      <!--pt-4 : 1.5 rem ; pb-4 : 1.5 rem ; -->
+      <!--bg-dark: backgdound dark ; navbar-dark : couleur du texte correspondant au bg-dark, donc, couleur white -->
+      <!--source : https://getbootstrap.com/docs/4.5/utilities/spacing/-->
+      <div class="container">
+        <!-- .container est une classe bootstrap, qui a margin: auto, donc, pas besoin qu'on l'écrive nous mêmes dans le css-->
+        <a class="navbar-brand" href="#">Marko Askovic</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarNav"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="#">Mes projets</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Mes compétences</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">à propos</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Contact</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <!-- /.container -->
+    </nav>
+    <div class="bg-portfolio">
+      <div class="container text-center">
+        <img width="240" src="img/avatar.png" alt="Marko Askovic" />
+        <h1>Marko Askovic</h1>
+        <div
+          class="my-4 separator d-flex justify-content-center align-items-center"
+        >
+          <!--Une marge selon y de 4 unités bootstrap soit 1.5 rem , c'est à la fois margin top et margin bottom -->
+          <div class="line"></div>
+          <i class="fas fa-laptop-code fa-3x"></i>
+          <!--fa-3x : on multiplie la taille de l'icône par 3 -->
+          <!--regarder les icônes sur le site de font awesome-->
+          <div class="line"></div>
+        </div>
+        <p class="lead">Développeur web</p>
+      </div>
+    </div>
+    <div class="bg-project">
+      <div class="container text-center text-uppercase">
+        <!--on met la div container pour la centrer par rapport à la div parent-->
+        <h2>Mes projets</h2>
+        <div
+          class="my-4 separator-dark d-flex justify-content-center align-items-center"
+        >
+          <!--Une marge selon y de 4 unités bootstrap soit 1.5 rem , c'est à la fois margin top et margin bottom -->
+          <div class="line"></div>
+          <i class="fas fa-laptop-code fa-3x mx-4"></i>
+          <!--fa-3x : on multiplie la taille de l'icône par 3 -->
+          <!--regarder les icônes sur le site de font awesome-->
+          <div class="line"></div>
+        </div>
+        <!--Bootstrap fonctionne sur une grille de 12 colonnes-->
+        <!--On peut donc avoir une row avec 4 colonnes de 3 -->
+        <!--On passe à la ligne dès qu'on est à 12-->
+        <div class="row">
+          <div class="col-12 col-md-6 col-lg-4 my-3 mb-4">
+            <div class="position-relative">
+              <a href="" data-toggle="modal" data-target="#project-1">
+                <div class="filter">
+                  <i class="fas fa-plus fa-4x"></i>
+                </div>
+                <img width="300" src="img/maquette01.png" alt="cabin" />
+              </a>
+            </div>
+          </div>
+          <div class="col-12 col-md-6 col-lg-4 my-3">
+            <img width="300" src="img/cake.png" alt="cake" />
+          </div>
+          <div class="col-12 col-md-6 col-lg-4 my-3">
+            <img width="300" src="img/circus.png" alt="circus" />
+          </div>
+          <div class="col-12 col-md-6 col-lg-4 my-3">
+            <img width="300" src="img/game.png" alt="game" />
+          </div>
+          <div class="col-12 col-md-6 col-lg-4 my-3">
+            <img width="300" src="img/safe.png" alt="safe" />
+          </div>
+          <div class="col-12 col-md-6 col-lg-4 my-3">
+            <img width="300" src="img/submarine.png" alt="submarine" />
+          </div>
+        </div>  <!-- /.row -->
+       
+
+        <div class="modal fade" id="project-1">
+          <div class="modal-dialog modal-xl">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title">Intégration numéro 1</h5>
+                <button class="close" data-dismiss="modal">
+                  <i class="fas fa-times close"></i>
+                </button>
+              </div>
+              <div class="modal-body">
+                <img width="300" src="img/maquette01.png" alt="cabin" />
+              </div>
+              <div class="modal-footer">
+                <button class="btn btn-danger" data-dismiss="modal">
+                  Fermer
+                </button>
+                <a
+                  href="../06-intégration-maquette/index.html"
+                  target="_blank"
+                  class="btn btn-primary"
+                  >Voir la maquette</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="bg-about">
+      <div class="container text-center">
+        <!--on met la div container pour la centrer par rapport à la div parent-->
+        <h2>à propos</h2>
+        <div
+          class="my-4 separator d-flex justify-content-center align-items-center"
+        >
+          <!--Une marge selon y de 4 unités bootstrap soit 1.5 rem , c'est à la fois margin top et margin bottom -->
+          <div class="line"></div>
+          <i class="fas fa-laptop-code fa-3x"></i>
+          <!--fa-3x : on multiplie la taille de l'icône par 3 -->
+          <!--regarder les icônes sur le site de font awesome-->
+          <div class="line"></div>
+        </div>
+        <div class="row">
+          <div class="col-12 col-md-6">
+            <p class="lead">
+              Freelancer is a free bootstrap theme created by Start Bootstrap.
+              The download includes the complete source files including HTML,
+              CSS, and JavaScript as well as optional SASS stylesheets for easy
+              customization.
+            </p>
+          </div>
+          <div class="col-12 col-md-6">
+            <p class="lead">
+              You can create your own custom avatar for the masthead, change the
+              icon in the dividers, and add your email address to the contact
+              form to make it fully functional!
+            </p>
+          </div>
+        </div>
+        <div class="mt-4">
+          <a class="btn btn-xl btn-outline-light px-4 py-3" href="#">
+            <i class="fas fa-download mr-2"></i>Voir mon CV
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="bg-contact">
+      <div class="container text-center">
+        <!--on met la div container pour la centrer par rapport à la div parent-->
+        <h2>Me contacter</h2>
+        <div
+          class="my-4 separator-dark d-flex justify-content-center align-items-center"
+        >
+          <!--Une marge selon y de 4 unités bootstrap soit 1.5 rem , c'est à la fois margin top et margin bottom -->
+          <div class="line"></div>
+          <i class="fas fa-laptop-code fa-3x mx-4"></i>
+          <!--fa-3x : on multiplie la taille de l'icône par 3 -->
+          <!--regarder les icônes sur le site de font awesome-->
+          <div class="line"></div>
+        </div>
+        <div class="form-container">
+          <form>
+            <div class="row">
+              <div class="col-12 pb-2">
+                <input
+                  type="text"
+                  class="form-control"
+                  id="name"
+                  placeholder="Nom"
+                  name="name"
+                  required="required"
+                />
+              </div>
+              <div class="col-12 pb-2">
+                <input
+                  type="email"
+                  class="form-control"
+                  placeholder="Adresse email"
+                  name="email"
+                  required="required"
+                />
+              </div>
+              <div class="col-12 pb-2">
+                <input
+                  type="text"
+                  class="form-control"
+                  placeholder="Numéro de téléphone"
+                  name="phone"
+                  required="required"
+                />
+              </div>
+              <div class="col-12 pb-2">
+                <textarea
+                  placeholder="Votre message"
+                  class="form-control"
+                  rows="5"
+                  required="required"
+                ></textarea>
+              </div>
+              <div class="col-12 text-center">
+                <button class="btn btn-primary btn-xl" type="submit">
+                  Envoyer
+                </button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <footer class="footer text-center">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-4 mb-5 mb-lg-0 px-4">
+            <h4>Adresse</h4>
+            <p class="lead">
+              2215 John Daniel Drive
+              <br />
+              Clark, MO 65243
+            </p>
+          </div>
+          <div class="col-lg-4 mb-5 mb-lg-0 px-4">
+            <h4>Réseaux sociaux</h4>
+            <a
+              class="btn btn-outline-light btn-social mx-1"
+              href="#"
+              target="_blank"
+            >
+              <i class="fab fa-fw fa-w-10 fa-facebook-f"></i>
+            </a>
+            <a
+              class="btn btn-outline-light btn-social mx-1"
+              href="#"
+              target="_blank"
+            >
+              <i class="fab fa-fw fa-w-16 fa-twitter"></i>
+            </a>
+            <a
+              class="btn btn-outline-light btn-social mx-1"
+              href="#"
+              target="_blank"
+            >
+              <i class="fab fa-fw fa-w-14 fa-linkedin-in"></i>
+            </a>
+            <a
+              class="btn btn-outline-light btn-social mx-1"
+              href="#"
+              target="_blank"
+            >
+              <i class="fab fa-fw fa-w-16 fa-dribbble"></i>
+            </a>
+          </div>
+          <div class="col-lg-4">
+            <h4>à propos</h4>
+            <p class="lead">Je suis un développeur web.</p>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <div class="copyright py-4 text-center text-white">
+      <div class="container">
+        <small
+          >Copyright &copy; Marko Askovic 2020
+        </small> <!-- on peut également obtenir @ avec font awesome : <i class="fal fa-copyright"></i> -->
+      </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <!--prendre la version 4.5.2 de bootstrap et effacer integrity et crossorigin, qui sont relatifs à la version 4.5.3 (dans laquelle il y a un bug, cf. console)-->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

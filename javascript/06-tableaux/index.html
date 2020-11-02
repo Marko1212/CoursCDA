@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Les tableaux en JS</title>
+  </head>
+  <body>
+    <script>
+      /*         var prenoms = ['Toto', 'Titi', 'Tata'];
+
+              prenoms.push('tutu'); // on ajoute tutu à la fin du tableau
+              prenoms.push(prompt('Comment tu t\'appelles?'));
+
+              for (var i = 0; i < prenoms.length; i++) {
+                  console.log(prenoms[i]);
+              }
+
+              prenoms.pop(); // permet de retirer le dernier élément
+
+              console.log(prenoms);
+              prenoms.unshift('Léonard'); // on rajoute Léonard en début du tableau
+              console.log(prenoms); // ["Léonard", "Toto", "Titi", "Tata", "tutu"]
+
+              //On rajoute 2 prénoms entre Titi et Tata, sans effacer de noms
+              prenoms.splice(3, 0, "Max", "Pierre");
+              console.log(prenoms); // ["Léonard", "Toto", "Titi", "Max", "Pierre", "Tata", "tutu"]
+
+              prenoms.shift() //on enlève le 1er élément (Léonard)
+              console.log(prenoms); */
+
+      /*               var semaine = ["Mardi", "Mercredi", "Jeudi", "Samedi", "Dimanche"];
+
+              semaine.unshift("Lundi");
+
+              semaine.splice(4, 0, "Vendredi");
+
+              console.log(semaine);
+
+              console.log("Le nombre de jours est " + semaine.length);
+
+              var aliments = ["Poulet", "Frites", "Chocolat"];
+
+              var alimentsIgnoreCase = [];
+              for (let aliment of aliments) {
+                  aliment = aliment.toLowerCase();
+                  alimentsIgnoreCase.push(aliment);
+              }
+
+              var response = prompt("Que veux tu manger?");
+
+              if (aliments.includes(response) || alimentsIgnoreCase.includes(response)) {
+                  alert("OK, on a ce qu'il faut pour vous!")
+              } else {
+                  alert("Désolé, on n'a pas cela!")
+              }
+ */
+      /*         3. Ecrire un script qui demande à l'utilisateur de taper 5 nombres. Une fois terminé,
+                 on affichera les nombres en précisant s'ils sont pairs ou impairs.
+      */
+
+      /*              var nombres = [];
+
+              for (var i = 0; i < 5; i++) {
+                  nombres[i] = parseInt(prompt("Saisissez un nombre"));
+              }
+
+              for (let nombre of nombres) {
+                  if (nombre%2 === 0) {
+                    console.log("Le nombre " + nombre + " est pair");
+                }
+
+             else 
+                  {
+                      console.log("Le nombre " + nombre + " est impair");
+                  }
+                }
+ */
+
+      /*
+              4. Créer un tableau avec une liste de notes (10, 14, 18, 2, 10).
+                 Calculer la moyenne.
+                 Afficher la note la plus haute du tableau.
+                 Afficher la note la plus basse du tableau.
+                 BONUS: Demander à l'utilisateur de remplir la liste de notes */
+
+      //var notes = [10, 14, 18, 2, 10];
+
+      /*                 var notes = [];
+
+                for (var i = 0; i < 5; i++) {
+                    notes[i] = parseInt(prompt("Saisissez une note"));
+                    }   
+                    
+
+                var somme = 0;
+                 for (var note of notes) {
+                    somme += note;
+                 }
+
+                 var moyenne = somme / notes.length;
+
+                 console.log(moyenne);
+
+                 //tri dans l'ordre croissant
+
+                 function triABulles(tableau) {
+                     var i = 0;
+
+                     while(i < tableau.length) {
+                        if (tableau[i] > tableau[i + 1]) {
+                            var temp = tableau[i];
+                            tableau[i] = tableau[i + 1];
+                            tableau[i + 1] = temp;
+                            i = 0;
+                        } else {
+                            i = i + 1;
+                        }
+                     }
+                     return tableau;
+                 }
+                 
+                 var notesTrieesOrdreCroissant = triABulles(notes);
+
+                 console.log("La note la plus haute est " + notesTrieesOrdreCroissant[4]);
+                 console.log("La note la plus basse est " + notesTrieesOrdreCroissant[0]);
+ */
+      /* 
+                 5. BONUS: Vous demanderez à l'utilisateur un nombre (5 par exemple).
+           De ce nombre, vous allez remplir un tableau de couleurs aléatoire (5 couleurs par exemple)
+
+           Vous afficherez alors les 2 couleurs ayant apparue le plus de fois. S'il n'y en a qu'une alors il n'y en a qu'une... 
+           
+           Ex. : 
+
+           rouge, rouge, jaune, bleu, jaune --> rouge et jaune
+           rouge, rouge, rouge, bleu, vert --> rouge
+
+           */
+
+      var couleurs = ["jaune", "bleu", "rouge", "vert", "orange"];
+
+      var response = parseInt(
+        prompt("Ecrivez un nombre entier supérieur ou égal à 3")
+      );
+
+      var tableauAleatoire = [];
+
+      for (var i = 0; i < response; i++) {
+        tableauAleatoire[i] =
+          couleurs[Math.floor(couleurs.length * Math.random())];
+      }
+
+      for (const couleur of tableauAleatoire) console.log(couleur);
+
+      const couleursObject = {};
+
+      for (let couleur of tableauAleatoire) {
+        couleursObject[couleur] = 0;
+      }
+
+      console.log(couleursObject);
+
+      for (var key in couleursObject) {
+        var compteur = 0;
+        for (var couleur of tableauAleatoire) {
+          if (couleur === key) compteur++;
+        }
+        couleursObject[key] = compteur;
+      }
+
+      console.log(couleursObject);
+
+      var mostFrequentColor = "";
+
+      var biggestFrequency = 0;
+
+      for (var key in couleursObject) {
+        var tmpFrequency = couleursObject[key];
+
+        if (tmpFrequency > biggestFrequency) {
+          biggestFrequency = tmpFrequency;
+          mostFrequentColor = key;
+        }
+      }
+
+      console.log("La couleur la plus frequente est le : " + mostFrequentColor);
+      console.log("La fréquence de couleur la plus élevée est : " + biggestFrequency);
+
+      delete couleursObject[mostFrequentColor]; // on enlève la propriété et sa valeur de l'objet
+
+      console.log(couleursObject);
+
+      for (var key in couleursObject) {
+        if (
+          couleursObject[key] === biggestFrequency
+        ) {
+          console.log("La couleur ex aequo la plus fréquente est le : " + key);
+          delete couleursObject[key];
+        }
+      }
+
+      console.log(couleursObject);
+
+      //BONUS : On veut maintenant afficher la 2ème couleur la plus fréquente et ses ex aequo éventuels!
+      // C'est pour ça qu'on a enlevé les key/value correspodant à la fréquence la plus élevée ci-dessus
+      //on peut maintenant refaire le processus
+
+      var secondMostFrequentColor = "";
+
+      var secondBiggestFrequency = 0;
+
+      for (var key in couleursObject) {
+        var tmpSecondFrequency = couleursObject[key];
+
+        if (tmpSecondFrequency > secondBiggestFrequency) {
+          secondBiggestFrequency = tmpSecondFrequency;
+          secondMostFrequentColor = key;
+        }
+      }
+
+      console.log("La 2ème couleur la plus frequente est le : " + secondMostFrequentColor);
+      console.log("La 2ème fréquence de couleur la plus élevée est : " + secondBiggestFrequency);
+
+      delete couleursObject[secondMostFrequentColor];
+
+      for (var key in couleursObject) {
+        if (
+          couleursObject[key] === secondBiggestFrequency
+        ) {
+          console.log("La couleur ex aequo avec la 2ème couleur plus fréquente est le : " + key);
+        }
+      }
+
+      console.log(couleursObject);
+
+    </script>
+  </body>
+</html>

@@ -1,0 +1,39 @@
+.product {
+    float:left; 
+    width:20%;
+    height: 100%;
+}
+
+.form {
+    float: left;
+    width: 80%;
+    height:auto;
+    text-align: left;
+    margin: auto;
+}
+
+.remarque {
+    padding-left: 80px;
+    color: gray;
+    font-size: 12px;
+}
+
+button {
+    margin-top: 10px;
+    width: 290px;
+    color: white;
+    background-color: rgb(37, 37, 179);
+    opacity: 0.8;
+}
+
+input {
+    width: 245px;
+    padding: 20px;
+}
+
+img {
+    max-width:100%;
+    height:auto;
+}
+
+

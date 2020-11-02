@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Le CSS</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css" type="text/css">
+    <!--type="text/css" est facultatif dans html5-->
+    <style>
+        p {
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+<!--Il existe 3 façons d'intégrer du CSS dans le HTML
+    (de la moins bonne à la meilleure méthode)
+    - Attribut style des balises
+    - Balise style dans le head
+    - Un fichier externe en .css
+-->
+<h1 style="color: rgb(69, 17, 211);">Mon titre est en bleu</h1>
+<p id="p1">Ce paragraphe est centré par rapport à la page et avec les lettres de couleur verte.</p>
+<p class="bg-red">Ce paragraphe a une couleur de fond rouge.</p>
+
+<!--
+    La couleur du paragraphe devra être en gris.
+    Le premier span devra être en majuscule.
+    Le deuxième span sera en gras et en bleu.
+    Il faut tout faire en CSS, pas toucher au html!
+    Le dernier span devra être en rouge. (Bonus)
+-->
+
+<p class="gray">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Porro, temporibus vel? Quia dolore, sit velit vitae nobis facilis <span class="uppercase">excepturi ullam nam nulla! Nostrum iste excepturi</span>reprehenderit esse quam iusto corrupti veniam ad magni, enim fugiat maiores ipsa deleniti ex voluptatibus quis est necessitatibus culpa laudantium nulla blanditiis <span id="blue-bold">omnis minima atque? Fugit rem laudantium praesentium</span>illo odit fuga modi asperiores quibusdam facilis dolorem, illum vitae optio? Dolorem neque at itaque sequi ducimus optio beatae aperiam eos laudantium quam molestiae<span>nostrum inventore, omnis</span> voluptate repellendus nulla amet esse, magni dignissimos! Aut delectus pariatur corrupti. Quibusdam odit earum porro tenetur sint.</p>
+
+<h2 class="green other">Un autre titre</h2>
+
+<p><span>Test</span></p>
+
+<span>Fin du body</span>
+</body>
+
+</html>

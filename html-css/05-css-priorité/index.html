@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Priorités CSS</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- CES REGLES SONT VALABLES POUR UN ELEMENT DONNE!
+        Les priorités en CSS (du + important au - important) :
+        - !important 10000
+        - attribut style html 2000 (c'est l'attribut sur l'élément)
+        - sélecteur id (#) 1000
+        - sélecteur classe (.), attribut ([]), pseudo classes 100
+        - sélecteur par balise 10
+        - sélecteur universel (*) 1
+    -->
+    <section id="container" class="container" style="background-color: pink;">
+        <p>Un paragraphe</p>
+        <p title="Salut">Paragraphe 2</p>
+    </section>
+
+
+    <!--Shortcut emmet : p#paragraphe-->
+    <p id="paragraphe">Paragraphe avec id paragraphe</p>
+
+    <p>
+        <!--Shortcut emmet : span#paragraphe-->
+        <span id="paragraphe"></span>
+    </p>
+
+    <!-- N'est pas sélectionné par "section > #pasus" -->
+    <section>
+        <div>
+            <p id="pasus">Paragraphe dans div dans section.</p>
+        </div>
+    </section>
+
+<!-- On sélectionne uniquement B, C et E pour + -->
+<!-- On sélectionne uniquement B, C, D et E pour ~ -->
+    <div id="content">
+        <p>A</p>
+        <p>B</p>
+        <p>C</p>
+        <span>Toto</span>
+        <p>D</p>
+        <p>E</p>
+    </div>
+
+    <!--j'affiche un champ de formulaire-->
+    <input type="text">
+
+    <!--La balise button ou input type=button réservée aux formulaires!
+    Si pas de formulaire, utiliser la balise a (anchor) comme ci-dessous -->
+    <a class="button" href="#">Cliquez ici</a>
+
+</body>
+
+</html>

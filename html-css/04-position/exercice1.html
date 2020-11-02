@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Exercice 1 positionnement</title>
+    <style>
+        .relative {
+            height: 400px;
+            background-size: cover;
+            /*le background couvre toute la div */
+            /*background-repeat: no-repeat;*/
+            background-image: url("chaton.jpg");
+            background-position: center;
+            position: relative;
+            /*   z-index: 1; */
+
+        }
+
+        .filter {
+            background-color: rgb(128, 128, 128, 0.7);
+            /* si on met absolute, il faut préciser la width : 100% (du parent positionné), 
+            car une div en position absolute perd sa largeur (car pas de contenu), donc, il faut alors préciser la largeur */
+            /*position: absolute;
+            width: 100% (du 1er parent positionné);
+            pas besoin de préciser top et left */
+            height: 400px;
+            /*  z-index: 2; */
+        }
+
+        .texte {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            font-size: 40px;
+            font-weight: 700;
+            color: #fff;
+            /*  z-index: 3; NE PAS UTILISER LES Z-INDEX SI PAS BESOIN!!! */
+        }
+    </style>
+</head>
+
+<body>
+    <!--1. Intégrer l'image du chat en background
+        2. Ajouter un texte par dessus en absolute (en bas à droite ou centré)
+        3. Ajouter un "calque" (div) de la taille de l'image au dessus de l'image avec
+        une transparence et une couleur. Le texte sera au dessus de tout.
+        Donc, d'abord image background puis calque puis texte 
+    -->
+
+    <div class="relative">
+        <!--la hauteur de ce div c'est la hauteur du texte (dans div avec class texte) . Donc, il faut "forcer" la hauteur à la main, avec height. 
+        Le background n'est qu'une décoration, ça ne donne aucune hauteur à la div, la largeur de la div est nulle. 
+        C'est le contenu (texte ou image) qui donne la hauteur à la div -->
+        <div class="filter"></div>
+        <div class="texte">Oh my cat !</div>
+    </div>
+</body>
+
+</html>

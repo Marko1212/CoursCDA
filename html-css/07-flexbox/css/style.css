@@ -1,0 +1,57 @@
+.page {/*Pas mettre display flex au niveau de cet élément !!!*/
+    width: 1000px;
+    margin: auto;
+}
+
+.header {
+    display: flex;
+    height:50px;
+  
+}
+
+.header p {
+    margin-left: 10px;
+}
+
+.logo {
+    width: 700px;
+    background-color: yellow;
+}
+
+.menu {
+    width: 300px;
+    background-color: yellow;
+}
+
+
+.main {
+    display: flex;
+  
+}
+
+.aside {
+    width: 300px;
+    background-color: red;
+}
+
+.aside p {
+    margin-left: 10px;
+    margin-top: 10px;
+}
+
+
+.content {
+    display: flex;
+    flex-wrap: wrap;
+    width: 700px;
+    background-color: blue;
+    justify-content: space-evenly;
+}
+
+
+.article {
+    width:  200px;
+    height: 200px;
+    background-color: orange;
+    margin: 10px 10px;
+}

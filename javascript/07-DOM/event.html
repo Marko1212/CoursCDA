@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Evenements</title>
+</head>
+<body>
+    <h1 id="titre">Mon titre</h1>
+
+    <script>
+
+        // Ancienne syntaxe - DOM-0
+        document.getElementById('titre').onclick = function() {
+            alert('Salut les gens');
+        }
+
+
+        // Nouvelle syntaxe - DOM-2 : on peut ajouter des event listeners et ils s'exécuteront tous (ils se rajoutent l'un après l'autre).
+        // Avec la syntaxe DOM-0 , si on rajoute un événement, il écrase le précédent; juste le dernier événenement est pris en compte
+        document.getElementById('titre').addEventListener('click', function() {
+            alert('Re les gens');
+        })
+    </script>
+</body>
+</html>

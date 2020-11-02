@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <title>Positionnement CSS</title>
+    <meta charset="UTF-8">
+    <style>
+        .square {
+            width: 100px;
+            height: 100px;
+        }
+        .red {
+            background-color: #ff0000;
+            position: relative;
+            top: 50px;
+            left: 50px;
+            z-index: 50;
+        }
+        .green {
+            background-color: #00ff00;
+            position: relative;
+            top: -100px;
+            z-index: 100;
+
+              /*
+                le z-index permet de forcer la position sur z : 
+
+                position : relative;
+                top: -100px;
+                z-index: 1
+
+                z-index par défaut vaut 0 pour un élément
+
+                Par défaut la div qui vient en dernier (class blue ici) sera au dessus des 2 autres (blue au dessus de green au dessus de red, 
+                c'est comme dans un jeu de cartes), si on les superpose (sans jouer sur z-index!).
+                Même en déplaçant les carrés du haut vers le bas, le carré bleu sera au dessus du carré vert lui même au dessus du carré rouge 
+                (toujours à condition de ne pas jouer sur z-index)
+
+        */
+        }
+        .blue {
+            background-color: #0000ff;
+            position: relative;
+            top: -100px;
+            left: 100px;
+            z-index: 0;
+        }
+
+    
+        /*
+        La position relative permet de déplacer l'élément HTML librement sur la page.
+        position: relative;
+        top: -200px;
+        opacity: 0.5; (opacity: 1 veut dire : totalement opaque)
+        */
+
+        .red1 {
+            background-color: #ff0000;
+            opacity: 0.85;
+        }
+
+        .green1 {
+            background-color: #00ff00;
+            position: relative;
+            top: -100px;
+            opacity: 0.15;
+        }
+
+        .blue1 {
+            background-color: #0000ff;
+            position: relative;
+            top: -200px;
+            opacity: 0;
+        }
+
+        .relative {
+            height: 400px;
+            background-image: url("galaxy.gif");
+            position: relative;
+           /*background-repeat : no-repeat; Par défaut : l'image se répète! */
+        }
+
+      .absolute {
+          font-size: 60px; /*pour augmenter la taille du emoji, on augmente font-size puisqu'un emoji est considéré comme un caractère */
+          position: absolute;
+          top: 30px;
+          right: 50px;
+      }
+
+      /* difference entre absolute et fixed, c'est qu'avec fixed, c'est toujours positionné par rapport à la fenêtre du navigateur */
+      /* avec absolute l'élément est positionné par rapport au 1er parent positionné (position : non static). S'il n'y en a pas, c'est body */
+      /* si on met les top / left en %, c'est le pourcentage du width/height du parent */
+
+      .starships {
+          background-image: url("starships.png"); /*l'image fait 700px de largeur, image transparente, format png */
+          background-size: 300px; /* on redemensionne le background à 300px de largeur, la hauteur est adaptée automatiquement, par rapport
+          à l'image de départ. */
+          width:100px; /* on veut sélectionner un seul vaisseau du background image, donc, on ajuste width and height */
+          height: 90px; /* cf. ligne précédente */
+      }
+
+      .starship-2 {
+          background-position: -100px 0; /*on choisit un vaisseau du background grâce à background-position; en jouant dessus, on peut sélectionner
+          des vaisseaux différents; 1ère coordonnée: axe des x (horizontal), seconde coordonnée: axe des y (vertical) */
+          position: absolute;
+          bottom: 20px; /* déplacement du bottom vers le top */
+          right: 400px; /* déplacement de la droite vers la gauche */
+      }
+
+      .starship-3 {
+          background-position: -200px 0;
+          position: absolute;
+          /*les éléments avec position absolute ignorent float! */
+          left: 300px;
+          top: 100px;
+      }
+
+      .starship-1 {
+          position: absolute;
+          right: 50px;
+          bottom: 30px;
+      }
+
+
+    </style>
+</head>
+<body>
+    <!--Emmet : div.square*3-->
+    <div class="square red"></div>
+    <div class="square green"></div>
+    <div class="square blue"></div>
+
+    <hr>
+
+    <div class="square red1"></div>
+    <div class="square green1"></div>
+    <div class="square blue1"></div>
+
+    <hr>
+
+    <div class="relative">
+        <div class="absolute">😀</div>
+        <div class="starships starship-1"></div>
+        <div class="starships starship-2"></div>
+        <div class="starships starship-3"></div>
+    </div>
+
+</body>
+</html>

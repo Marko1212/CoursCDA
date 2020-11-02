@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            background-image: url(automne.jpg);
+            background-size: cover;
+            margin: 0;
+        }
+
+        .flex {
+            display: flex;
+            height: 100vh;
+        }
+
+        .formContainer {
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;
+            padding: 20px;
+            justify-content: center;
+            text-align: center;
+            border-radius: 5px;
+            background-color: #fff;
+        }
+
+        .form-group {
+            width: 60%;
+            display: flex;
+            justify-content: space-between;
+            margin: auto;
+        }
+
+        .page {
+            width: 90%;
+            margin: auto;
+        }
+
+        label {
+            text-align: left;
+            margin-bottom: 10px;
+        }
+
+        .field>label {
+            text-transform: uppercase;
+        }
+
+        .field {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            margin-bottom: 20px;
+            width: 100%;
+            padding: 10px;
+        }
+
+        input[type="text"],
+        select {
+            width: 100%;
+            box-sizing: border-box;
+            /*ça permet d'avoir la même largeur pour le input et le select quand on resize */
+            border-radius: 10px;
+            border: 1px soild grey;
+            padding: 5px 10px;
+        }
+
+        .checkbox,
+        .radio {
+            display: flex;
+            flex-direction: row;
+        }
+
+        input:focus,
+        select:focus {
+            border-color: red;
+            outline: 0;
+            /* outline : bordure à l'intérieur*/
+        }
+
+        .button-container {
+            text-align: center;
+        }
+
+        .checkbox label,
+        .radio label {
+            margin-left: 10px;
+        }
+
+        button {
+            background-color: transparent;
+            color: #000;
+            border: 1px solid #000;
+            padding: 8px 20px;
+            border-radius: 15px;
+            transition: 0.5s;
+
+        }
+
+        button:hover {
+            cursor: pointer;
+            background-color: #000;
+            color: #fff;
+        }
+
+        @media (max-width: 767px) {
+            .form-group {
+                flex-direction: column;
+                width: 100%;
+            }
+
+            .page {
+                width: 100%;
+            }
+
+        }
+    </style>
+    <title>Formulaire responsif</title>
+</head>
+
+<body>
+    <div class="flex">
+        <div class="page">
+            <div>
+
+                <form>
+                    <div class="formContainer">
+                        <div class="form-group">
+                            <div class="field">
+                                <label for="name">Nom :</label>
+                                <input type="text" id="name" name="name" />
+                            </div>
+                            <div class="field">
+                                <label for="prenom">Prenom :</label>
+                                <input type="text" id="prenom" name="prenom" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="field">
+                                <label for="telephone">Telephone :</label>
+                                <input type="text" id="telephone" name="telephone" />
+                            </div>
+                            <div class="field">
+                                <label for="situation">Situation :</label>
+                                <select name="situation" id="situation">
+                                    <option value="marié(e)">Marié(e)</option>
+                                    <option value="célibataire">Célibataire</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="field">
+                                <label>Hobbies :</label>
+                                <div class="checkbox">
+                                    <input type="checkbox" name="maquettes" id="maquettes" style="display: inline;">
+                                    <label for="maquettes">Maquettes</label>
+                                </div>
+                                <div class="checkbox">
+                                    <input type="checkbox" name="cyclisme" id="cyclisme">
+                                    <label for="cyclisme">Cyclisme</label>
+                                </div>
+                                <div class="checkbox">
+                                    <input type="checkbox" name="cuisine" id="cuisine">
+                                    <label for="cuisine">Cuisine</label>
+                                </div>
+                            </div>
+                            <div class="field">
+                                <label>CIVILITE :</label>
+                                <div class="radio">
+                                    <input type="radio" name="civility" id="mister">
+                                    <label for="mister">Mr</label>
+                                </div>
+                                <div class="radio">
+                                    <input type="radio" name="civility" id="miss">
+                                    <label for="miss">Mme</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="button-container"><button>Envoyer</button></div>
+                    </div>
+                </form>
+
+
+
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

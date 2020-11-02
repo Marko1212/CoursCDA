@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Time</title>
+</head>
+<body>
+
+<!--     1. Ecrire un script qui change le contenu d'un h1 toutes les 5 secondes avec les valeurs suivantes: Intégrateur, Développeur, Administrateur système.
+
+    2. Ecrire un script qui change la couleur de fond du body au bout de 5 secondes avec une transition
+    
+    3. Renseignez vous sur la classe Date et essayez d'afficher l'heure sur une page au format HH:MM:SS
+    
+    4. Rafraichir la valeur de l'heure toutes les secondes -->
+
+    <h1 id="titre"></h1>
+
+    <div id="currentTime"></div>
+    <script>
+
+        var jobs = ['Intégrateur', 'Développeur', 'Administrateur système'];
+
+        var compteur = 0;
+        var titre = document.getElementById("titre");
+
+        var temps = setInterval(change, 5000);
+        //clearInterval(temps); // si on met le clearInterval en dehors de la fonction change, aucun cycle n'est exécuté!
+
+        function change() {
+
+            titre.innerHTML = jobs[compteur];
+            compteur ++;
+            if (compteur >= jobs.length) {
+                compteur = 0;
+            }
+            //clearInterval(temps); // enlever celà si on veut arrêter de rafraîchir après 1 cycle
+        }
+
+    setInterval(function(){
+    document.querySelector('body').style.backgroundColor = '#' + Math.floor(Math.random()*0xFFFFFF).toString(16);
+    document.querySelector("body").style.transition = "background-color 0.5s";
+
+}, 5000);
+
+function checkTime(i) {
+  if (i < 10) {
+    i = "0" + i;
+  }
+  return i;
+}
+
+function startTime() {
+  var today = new Date();
+  var h = today.getHours();
+  var m = today.getMinutes();
+  var s = today.getSeconds();
+  // rajouter un zéro devant les nombres<10
+  h = checkTime(h);
+  m = checkTime(m);
+  s = checkTime(s);
+  document.getElementById('currentTime').innerHTML = h + ":" + m + ":" + s;
+
+
+}
+
+startTime();
+
+var interval = setInterval(function() {
+    startTime()
+  }, 1000);
+    
+    </script>
+</body>
+</html>

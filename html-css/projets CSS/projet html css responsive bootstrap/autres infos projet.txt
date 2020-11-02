@@ -1,0 +1,5 @@
+Font : Poppins et Font awesome
+Vert : #3ecf8e
+Bleu foncé: #5533ff
+Bleu clair: #25ddf5
+Pour les petits pictos verts, il faudra font awesome

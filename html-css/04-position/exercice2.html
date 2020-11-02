@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Exercice 2 positionnement</title>
+    <style>
+
+        body{
+            margin: 0;
+
+        }
+        .container {
+            background-color: #fff;
+            height: 260px;
+            width: 100%;
+            position: absolute;
+            bottom: 0;
+            z-index: 1;
+        }
+
+        .sea {
+            background-image: url("sea.png");
+            /*    width: 260px;
+            height: 260px; */
+            width: 100%; /*largeur 100% du parent, donc, il faut aussi donner une largeur au parent!!!*/
+            height: 260px;
+            z-index: 2;
+            position: absolute;
+        }
+
+        .boat {
+            background-image: url("tita.png");
+            background-size: 150px;
+            width: 150px;
+            height: 150px;
+            position: absolute;
+            background-repeat: no-repeat;
+            bottom: 60px;
+            left: 480px;
+            z-index: 3;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="sea"></div>
+        <div class="boat"></div>
+    </div>
+
+</body>
+
+</html>

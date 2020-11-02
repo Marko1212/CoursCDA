@@ -1,0 +1,98 @@
+body {
+    background-color: #d3d3d3;
+    margin: 0; /*mettre marge à 0*/
+}
+
+.page {
+    margin: auto;
+    width: 1000px;
+}
+
+header {/*on précise la hauteur ici, parce qu'on veut que la hauteur soit plus grande que la place qu'aurait pris le texte du header.*/
+    background-color: #ffcc86;
+    border: 3px solid #000; /* border : taille, type, couleur */
+    background-image: linear-gradient(to bottom, #fff, #ffa500); /*direction du gradient de couleur, point de départ, point d'arrivée ; gradient linéaire ici; par défaut, le gradient est du haut vers le bas, donc, on peut omettre le 1er argument (to bottom)*/
+    height: 94px; /*100px - 6px de bordure */
+    line-height: 94px; /* height = line-height pour centrer le texte du header verticalement */
+    text-align: center;
+}
+
+nav {
+    background-color: #aaffff; /*on met quand même bkg color, au cas où certains navigateurs ne supportent pas la propriété css backgroundcolor-image */
+    background-image: linear-gradient(#fff, #67ffff);
+    border-width: 3px;
+    border-style: solid;
+    border-color: #000;
+    margin: 15px 0;
+    /*text-align: center;*/
+}
+
+nav ul {
+    list-style-type: none; /*optionnel ici, voir remarque nav ul li */
+    margin: 10px; /*le ul a une marge par défaut : on peut la changer, on le fait ici */
+    padding: 0; /*le li a un padding par défaut à gauche : on peut le changer, on le fait ici*/
+    text-align: center;
+}
+
+nav ul li {
+    display: inline; /*les bullets de la unordered list sont enlevés automatiquement si on fait display: inline */
+}
+
+#logo {
+    float: left;
+}
+
+section {
+    border: 3px solid #000;
+    width: 664px;
+    padding: 10px 15px;
+    float: left;
+    margin-right: 15px;
+
+}
+
+article {
+    border: 3px solid #000;
+    background-color: #8db1e3;
+    height: 150px;
+    
+}
+
+div {
+    margin-top: 15px;
+}
+
+div > article {  /*article est un enfant DIRECT de la div */
+    float: left;
+    width: 471px;
+    margin-right: 10px;
+}
+
+div > aside {   /* aside est un enfant DIRECT de la div */
+    float: left;
+    width: 171px;
+    height: 150px;
+}
+
+aside {
+    border: 3px solid #000;
+    background-color: #d5a39c;
+    height: 347px;
+    width: 279px;
+    float: left;
+}
+
+.clear {
+    clear: both;
+}
+
+footer {
+    background-color:#d2d4ac;
+    margin: 15px 0;
+    border: 3px solid #000;
+    text-align: center;
+    height: 44px;
+    line-height: 44px;
+}
+
+

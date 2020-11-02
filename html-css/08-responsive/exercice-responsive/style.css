@@ -1,0 +1,119 @@
+/*Ecran de 1200px et + */
+
+.page {
+    width: 1200px;/*bonne pratique de mettre 1200px ici pour la div . page */
+    margin: auto; /*centre le conteneur sur la page html */
+}
+
+
+header {
+    display: flex;
+    justify-content: space-between;
+}
+
+.rectangle_red {
+    width: 30%;
+    background-color: red;
+    height: 100px;
+}
+
+.rectangle_green {
+    width: 60%;
+    background-color: green;
+    height: 100px;/*on peut ne rien mettre ici, car comme on est en flex, les éléments on automatiquement
+    la même hauteur; or rectangle_red a une hauteur égale à 100px, cf. plus haut*/
+}
+
+main {
+    margin-top: 30px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+}
+
+.container {
+    width: 20%;
+    height: 180px;
+    margin-top: 20px;
+}
+
+.content {
+    height: 120px;
+    background-color: gray;
+    margin-bottom: 20px;
+}
+
+.footer {
+    height: 40px;
+    background-color: yellow;
+}
+
+body {
+    margin: 0;
+    padding: 0;/*dans certains browsers, il y a un default padding
+    au lieu d'un default margin, pour le body, donc, on met les deux à 0*/
+}
+
+
+/*écran de 1199px et -*/
+
+@media (max-width: 1199px) {
+
+    .page {
+        width: 92%; /*92% de la taille de l'écran*/
+    }
+    
+
+    .container {
+        width: 30%;
+    }
+
+    .rectangle_red {
+        width: 15%;
+    }
+
+    .rectangle_green {
+        width: 75%;
+    }
+}
+
+/*écran de 991px et -*/
+@media (max-width: 991px) {
+
+    .container {
+        width: 47%;
+    }
+}
+
+
+/*écran de 767px et -*/
+@media (max-width: 767px) {
+
+    .container {
+        width: 100%;
+    }
+
+    header {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 160px;
+    }
+    
+    .rectangle_red {
+        /* display: none; */
+        width: 100%;
+        background-color: red;
+        height: 70px;
+        order: 1;
+         /*on met cela pour faire apparaître le rouge après le vert (order default de l'élément = 0), comme le demande l'exercice. on aurait pu aussi mettre flex-direction: column-reverse;,
+         sur le header (qui est flex), à la place de celà */
+    }
+    
+    .rectangle_green {
+        width: 100%;
+        background-color: green;
+        height: 70px;
+    }
+}

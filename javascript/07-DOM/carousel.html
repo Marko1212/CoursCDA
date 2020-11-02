@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carousel</title>
+</head>
+<style>
+
+* {box-sizing: border-box}
+body {margin:0}
+.mySlides {display: none}
+    /* Slideshow container */
+.slideshow-container {
+  max-width: 1068px;
+  position: relative;
+  margin: auto;
+}
+
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -22px;
+  padding: 16px;
+  color:white;
+  font-weight: bold;
+  font-size: 18px;
+  /* transition: 0.6s ease; */
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+/* Positionner le next button à droite */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* Fading animation */
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}
+
+@keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}
+</style>
+
+
+<body>
+
+<!--     On va essayer de réaliser un slider (Sans Bootstrap).
+         Il nous faudra trois images. On aura également deux flèches (droite et gauche).
+         On affiche la première image. On clique (souris) sur la flêche de droite, on change cette image par la seconde et ainsi de suite. Quand on est sur la troisième image, on arrive sur la première image. On peut faire pareil avec la flèche gauche.
+         BONUS 1: Il faudrait qu'en appuyant sur la flèche droite ou gauche (clavier), on puisse faire défiler le slider (Utiliser un événement et détecter la touche pressée).
+         BONUS 2: Il faudrait obtenir une transition entre les slides (effet tapisserie ou d'opacité).
+         BONUS 3: Avoir un défilement automatique toutes les 5 secondes. -->
+    <div class="slideshow-container">
+
+        <div class="mySlides fade">
+          <img src="img/nature1.jpg" style="width:100%">
+        
+        </div>
+        
+        <div class="mySlides fade">
+          <img src="img/nature2.jpg" style="width:100%">
+    
+        </div>
+        
+        <div class="mySlides fade">
+          <img src="img/nature3.jpg" style="width:100%">
+        </div>
+        
+        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+        
+        </div>
+        <br>
+        
+<!--         <div style="text-align:center">
+          <span class="dot" onclick="currentSlide(1)"></span> 
+          <span class="dot" onclick="currentSlide(2)"></span> 
+          <span class="dot" onclick="currentSlide(3)"></span> 
+        </div> -->
+
+    <script>
+var slideIndex = 1;
+showSlides(slideIndex);
+
+// Contrôle: suivant/précédent
+function plusSlides(n) {
+  slideIndex += n;
+  showSlides(slideIndex);
+}
+
+/* // Thumbnail image controls
+function currentSlide(n) {
+  slideIndex = n;
+  showSlides(slideIndex);
+} */
+
+function showSlides(n) {
+  var i;
+  
+  var slides = document.getElementsByClassName("mySlides");
+  //var dots = document.getElementsByClassName("dot");
+  if (n > slides.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = slides.length}
+  console.info(slideIndex);
+  for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+  }
+/*   for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+  } */
+  slides[slideIndex-1].style.display = "block";
+  //dots[slideIndex-1].className += " active";
+}
+
+document.addEventListener('keydown', function(e) {
+  if(e.keyCode === 37) { // gauche
+    plusSlides(-1);
+  }
+  else if(e.keyCode === 39) { // droite
+    plusSlides(1);
+  }
+});
+
+/* document.onkeydown = checkKey;
+
+function checkKey(e) {
+
+   e = e || window.event;
+
+    if (e.keyCode == '37') {
+      plusSlides(-1);
+    }
+    else if (e.keyCode == '39') {
+      plusSlides(1);
+    }
+
+}   */
+
+
+var slideIndexAuto = 0;
+showSlidesAuto();
+
+function showSlidesAuto() {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+  slideIndexAuto++;
+  if (slideIndexAuto > slides.length) {slideIndexAuto = 1}
+  slides[slideIndexAuto-1].style.display = "block";
+  setTimeout(showSlidesAuto, 5000); // Changer d'image toutes les 5 secondes
+}
+    </script>
+
+    
+</body>
+</html>

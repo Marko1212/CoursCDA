@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulaire</title>
+</head>
+
+<body>
+    <form action="">
+        <!-- input représente un champ text, number, email, password -->
+        <label for="firstname">Prénom :</label>
+        <!--le label sert à décrire le input . Il faut toujours le mettre ! Le label est le titre du champ! -->
+        <!--le for fait référence à l'id du input. Quand on clique sur le label (Prénom), le input est sélectionné.
+        C'est fait pour des personnes malvoyantes -->
+        <input type="text" name="firstname" id="firstname">
+        <!--toujours définir un attribut name dans le input -->
+        <!--l'attribut name du input nous servira plus tard, avec le php. Pour l'instant on ne l'utilise pas -->
+
+        <!--Les autres types de champs-->
+        <!--Le champ radio (un seul choix) -->
+        <!--On mais le même name civility du coup-->
+
+        <input type="radio" name="civility" id="mister">
+        <label for="mister">Monsieur</label>
+        <input type="radio" name="civility" id="miss">
+        <label for="miss">Madame</label>
+
+        <!--Le champ checkbox-->
+        <h2>Vos compétences</h2>
+        <input type="checkbox" name="skills" id="html">
+        <label for="html">HTML</label>
+
+        <input type="checkbox" name="skills" id="php">
+        <label for="php">PHP</label>
+
+
+        <br /> <br />
+
+        <!--Le champ select (Liste déroulante) -->
+        <label for="job">Métier</label>
+        <select name="job" id="job">
+            <option value="développeur">Développeur</option>
+            <option value="intégrateur">Intégrateur</option>
+        </select>
+        
+        <br /><br />
+
+        <!--Une zone de texte-->
+        <label for="message">Message</label>
+        <textarea name="message" id="message" cols="30" rows="5"></textarea><!--30 colonnes, c'est environ 30 caractères -->
+
+        <br /><br />
+        <button>Envoyer</button>
+        <!-- Alternative : <input type="submit" value="Envoyer"> . Il vaut mieux utiliser la balise button ! -->
+    </form>
+</body>
+
+</html>

@@ -1,0 +1,54 @@
+/*
+On a des sélecteurs en CSS
+   - par balise (tag)
+   - par class (.classe)
+   - par id (#id)
+*/
+
+.bg-red {
+    background-color: #ff0000;
+    text-align: left;
+}
+
+#p1 {
+    color: #00ff00;
+}
+
+.gray {
+    color: #808080;
+}
+
+.uppercase{
+    text-transform: uppercase;
+}
+
+#blue-bold {
+    font-weight: 700;
+    color: #0000ff;
+}
+
+/* pseudo classe */
+span:last-child { 
+    color: #ff0000;
+    text-transform: uppercase;
+}
+
+h2.green.other {
+    background-color: #00ff00;
+}
+
+/* h2.green.other = 1 seul élément (un h2) ayant 2 classes en même temps (green et other).
+
+h2 .green .other (avec des espaces): 
+
+Là, on a une hiérarchie. par exemple : 
+
+un h2 contenant un span (class : green) lui même contenant un 
+autre span (class : other)
+
+*/
+
+/* 
+span:nth-child(3) { 
+    color: #ff0000;
+} */

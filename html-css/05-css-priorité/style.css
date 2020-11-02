@@ -1,0 +1,132 @@
+* {
+    color: violet;
+}
+
+/*Sélection par balise*/
+section {
+    background-color: red !important;
+}
+
+/*Sélection par id */
+#container {
+    background-color: yellow;
+}
+
+#container.container { /*les priorités s'ajoutent!*/
+    background-color: rebeccapurple;
+}
+
+/*Sélection par classe*/
+.container {
+    background-color: blue;
+}
+
+/*Sélection par attribut*/
+p[title="Salut"] {
+    background-color: yellow;
+}
+
+p {
+    margin: 0; /*les paragraphes ont une margin non nulle par défaut*/
+}
+
+section { /*sa valeur 'écrase' celle du 1er sélecteur section car il a la même priorité
+    que lui mais et situé après lui! */
+    background-color: blue !important;
+}
+
+/*Sélecteurs CSS avancés*/
+
+    /*Sélectionne le p avec l'id paragraphe */
+    p#paragraphe {
+
+    }
+
+    /*Sélectionne le p avec l'id paragraphe dans un p */
+
+    p #paragraphe {
+
+    }
+
+
+    /* Même chose avec une classe */
+
+    p.paragraphe {}
+
+    p .paragraphe {}
+
+
+    /*Sélectionne un élément DIRECTEMENT enfant d'un autre élément */
+/*ici ça ne marche pas!*/
+section > #pasus {}
+
+
+/*Sélectionne les p DIRECTEMENT précédes d'un p avec le + */
+
+#content p + p {}
+
+
+/*Sélectionne les p précédes d'un p avec le tilde */
+
+#content p ~ p {}
+
+/* Les pseudo classes */
+
+/*au survol*/
+p:hover {
+    background-color: blue;
+}
+
+/*au click*/
+p:active {
+    background-color: red;
+}
+
+/*au focus*/
+
+input:focus {
+    background-color: lightblue;
+}
+
+.button, .button:visited {
+    background-color: rgb(24, 183, 223);
+    text-decoration: none;
+    color:#fff;
+    padding: 5px 10px;
+    border-radius: 5px;
+    border: 1px solid transparent;
+    /*il faut mettre une bordure sur le bouton dès
+    le départ, car si on ne la met pas, quand on fait hover,
+    le bouton augmente légèrement de taille, car une
+    bordure apparaît alors (cf. plus bas)*/
+
+    /*la transition se met sur l'élément directement : .button! et pas sur .button:hover ! */
+    transition: 0.5s;
+}
+
+.button:active {
+    color: #000 !important;
+}
+
+.button:hover {
+    background-color: transparent;
+    color: rgb(24, 183, 223);
+    border: 1px solid rgb(24, 183, 223);
+}
+
+/*Sélectionne tous les p, qui sont 1er enfant de n'importe quel élément (leur parent) */
+p:first-child {
+    border: 1px solid green;
+
+}
+
+/*Sélectionne tous les p, qui sont 2ème enfant de leur parent: par
+exemple, il y a un élément section en 1er élement, puis un p en deuxième
+élément */
+p:nth-child(2) {
+    background-color: purple;
+
+}
+
+/*Sélectionne tous les p, qui sont dernier enfant de leur parent*/
+p:last-child {}

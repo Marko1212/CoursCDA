@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM exos</title>
+</head>
+<body>
+<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam itaque ea asperiores illum velit delectus numquam. Necessitatibus unde possimus fugit ad voluptatibus quos officia tenetur pariatur temporibus, voluptatum excepturi delectus iusto mollitia. Nostrum velit sunt dolorum. Corporis aspernatur voluptates possimus delectus vero, facilis provident fuga error a alias praesentium enim, nulla illo ipsa quaerat, corrupti rem omnis rerum natus laudantium? Modi voluptatibus ullam iste cumque eaque ratione deleniti ducimus recusandae excepturi? Vero nemo repudiandae mollitia vel?</p>
+    
+    <script>
+        /*
+            BONUS : on va essayer de trouver un certain mot dans un p. Si on cherche "Lorem", par exemple, on va devoir remplacer tous les mots "Lorem" par un 
+            <span style='color: green'>Lorem</span> . Pour faire cela, on doit transformer toute la chaine en tableau ou chaque mot est un élément du tableau.
+            A partir de là, on peut parcourir le tableau et trouver le mot en question puis le remplacer dans le tableau. A la fin, on remplace le contenu du p 
+            par le tableau modifié qui sera d'abord transformé en chaîne. 
+        */
+
+        var chaine = document.getElementsByTagName('p')[0].textContent;
+        console.log(chaine);
+        var tableauChaine =  chaine.trim().split(" ");
+        console.log(tableauChaine);
+
+        for (var i = 0; i < tableauChaine.length; i++) {
+            if (tableauChaine[i] === "Lorem") {
+                tableauChaine[i] = "<span style='color: green'>Lorem</span>" ;
+            }
+        }
+
+        console.log(tableauChaine);
+
+        var chaineModifiée = tableauChaine.join(" ");
+
+        document.getElementsByTagName('p')[0].innerHTML = chaineModifiée;
+
+    </script>
+</body>
+</html>

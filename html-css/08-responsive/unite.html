@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body {
+        font-size: 14px;
+    }
+
+    h1 {
+        font-size: 5em;
+        /*1 em c'est 1 fois la font size du parent*/
+        /*5em représentent 5 fois la font size du parent */
+        /*1em represente 14px, 5em representent 70px*/
+    }
+    
+    span {
+        font-size: 0.75em; /* 3/4 du h1 : 52.5px */
+        font-style: 0.75rem; /* 3/4 du body : 10.5 px ==> par rapport au font size du root element (html c'est à dire body)*/
+    }
+    p {
+        font-size: 1.5em;
+    }
+
+@media(max-width: 767px) {
+    body {
+        font-size: 10px;
+    }
+}
+</style>
+<body>
+    <h1>Mon titre
+        <span>Sous titre</span>
+    </h1>
+    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Modi numquam saepe magni molestias dolore aliquid quos consequatur eligendi ducimus veritatis illo sit veniam ut, accusamus laboriosam. Architecto rem illo doloribus!
+    </p>
+</body>
+</html>

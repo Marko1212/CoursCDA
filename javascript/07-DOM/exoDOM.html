@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exo DOM</title>
+</head>
+<body>
+
+    <h1 id="titre">C'est un titre</h1>
+
+    <form action="">
+        <input id="entree" type="text">
+    </form>
+    
+
+    <script>
+    document.getElementById("entree").addEventListener('input', changeTitre);
+    //on peut utiliser l'event'keyup', au lieu de 'input', il y a un petit 'delta' temporel
+
+/* function */
+function changeTitre(e){
+   document.getElementById("titre").textContent = e.target.value;
+}
+    </script>
+</body>
+</html>

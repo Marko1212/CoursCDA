@@ -1,0 +1,302 @@
+
+/*Utiliser une police custom, c'est à dire, qu'on ne trouve pas sur google fonts */
+
+@font-face {
+    font-family: 'BallPark'; /*on peut aussi mettre entre guillemets */
+    src:    url("../fonts/ballpark.eot") format('embedded-opentype'),
+            url("../fonts/ballpark.woff") format('woff'),
+            url("../fonts/ballpark.ttf") format('truetype'),
+            url("../fonts/ballpark.svg") format('svg');
+}
+
+.preload * {
+    -webkit-transition: none !important;
+    -moz-transition: none !important;
+    -ms-transition: none !important;
+    -o-transition: none !important;
+  }
+
+.page {
+    margin: auto;
+    width: 1000px;
+}
+
+body {
+    background-image: url("../img/bg.png");
+    margin: 0; /*mettre marge à 0*/
+    font-family: 'Nunito', sans-serif;
+    /*si la police Nunito n'est pas bien bien chargée, c'est la police sans-serif qui sera utilisée par le browser */
+}
+
+.logo, .menu {
+    float: left;
+    width: 500px; /*moitié de 1000px pour chaque div*/
+}
+
+.logo {
+    font-weight: 700;
+    padding: 15px 0; /*on met une top padding un peu inférieure sur le logo que sur le menu, parce
+    que les caractères du logo sont de taille un peu supérieure à ceux de la nav */
+    font-family: 'BallPark', sans-serif;
+    font-size: 26px;
+}
+
+.logo a {
+    text-decoration: none;
+}
+
+.menu {
+    text-align: right;
+}
+
+.line {
+    background-color: #000;
+    height: 2px;
+    position: absolute;
+    top: 70px;
+    left: 0px;
+    width: 100%;
+}
+
+.menu ul {
+    margin: 0;
+    padding: 0;
+}
+
+.menu ul li {
+    display: inline; /*les bullets de la unordered list sont enlevés automatiquement si on fait display: inline */
+}
+
+.menu ul li a {
+    text-decoration: none;
+    color: #000;
+    text-transform: uppercase ;
+    padding: 20px 12px;
+    display: inline-block;
+}
+
+.menu ul li a:hover {
+    background-color: #000;
+    color: #fff;
+}
+
+.hero {
+  background-image: url("../img/new-york.jpg");
+  height: 250px; /*on donne une hauteur à cette div car sans contenu elle n'a pas de taille*/
+  background-size: cover;
+  background-position: center;
+  border-radius: 5px 5px 0 5px;
+  box-shadow: 0 4px 4px 0 #696969;
+  position: relative;
+}
+
+.hero p {
+    margin: 0 0 10px 0;
+}
+
+.hero .filter {
+    background-color: rgba(0, 0, 0, 0.4);
+    height: 100%;
+    width: 100%;
+    border-radius: 5px 5px 0 5px;
+    position: absolute;
+}
+
+.hero .hero-text {
+    position: absolute;
+    width:100%;
+    text-align: center;
+    top: 50%; /*je positionne le texte à 125px donc la moitié du hero*/
+    transform: translateY(-50%); /*je remonte le texte de la moitié de sa taille, c'est à dire de la moitié de la hauteur de la div .hero-text.
+    Le pourcentage s'applique ici à la div elle-même à laquelle on l'applique, pas à la div parent .hero . Ce n'est pas la même chose pour le positionnnement
+    absolu par exemple */
+    color: #fff;
+
+}
+
+.hero .hero-text a {
+    color: #fff;
+    background-color: #000;
+    border-radius: 5px;
+    padding: 8px 16px;
+    text-decoration: none;
+    display: inline-block;
+}
+
+/* ---- Partie principale du site ---- */
+
+main {
+    border-bottom: 2px solid #000;
+    padding-bottom: 20px;
+}
+main article, main aside {
+    float: left;
+}
+
+main article {
+    width: 680px;
+    margin-right: 20px;
+}
+
+main article h1 {
+    text-transform: uppercase;
+    font-size: 20px;
+    margin-top: 30px;
+}
+
+main aside {
+    width: 260px;
+    background-color: #808080;
+    position: relative; /*avec ça, on fait passer l'élement au dessus de l'ombre*/
+    padding: 10px 20px;
+    color: #fff;
+    border-radius: 0 0 5px 5px;
+    box-shadow: 0 1px 4px #000;
+}
+
+aside .triangle {
+    position: absolute;
+    left: -14px;
+    top: 105px;
+    width: 0;
+    height: 0;
+    border-top: 7px solid transparent;
+    border-right: 14px solid #808080;
+    border-bottom: 7px solid transparent;
+}
+
+main aside h2 {
+    text-transform: uppercase;
+    font-size: 20px;
+}
+
+main aside img {
+    display: block;
+    margin: auto;
+    width: 80px;
+    border: 3px solid #000;
+}
+
+.sprite {
+    background-image: url("../img/sprite.png");
+    background-size: 280px 81px;
+    width: 40px;
+    height: 40px;
+    display: inline-block;
+    margin-left: 18px; /*ce n'est pas vraiment centré, on "triche" avec la marge pour "centrer" */
+    transition: 0.5s;                  
+}
+
+.sprite span {
+    display: none; /*accessibilité : personnes non voyantes; aussi, on peut écrire: visibility: hidden;*/
+}
+
+.sprite-twitter {
+    background-position: -40px 0;
+}
+
+.sprite-youtube {
+    background-position: -80px 0;
+}
+
+.sprite-instagram {
+    background-position: -120px 0;
+}
+
+.sprite:hover {
+    background-position-y: 40px;
+}
+
+.justify  {
+    text-align: justify;
+}
+
+.clear {
+    clear: both;
+}
+
+/*Bas de page*/
+
+
+footer {
+    height: 250px;
+}
+
+footer .tweet, footer .photos, footer .friends {
+    float: left;
+}
+
+footer .tweet {
+    width: 333px;
+}
+
+footer .photos {
+    width: 333px;
+}
+
+footer .friends {
+    width: 334px;
+}
+
+footer .tweet h3 {
+    text-transform: uppercase;
+    font-size: 20px;
+
+}
+
+footer .photos h3 {
+    text-transform: uppercase;
+    font-size: 20px;
+
+}
+
+footer .friends h3 {
+    text-transform: uppercase;
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+footer .friends .friends1, footer .friends .friends2 {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    width: 50%;
+    float: left;
+}
+
+
+footer ul li {
+    position: relative;
+}
+
+/* footer ul li::before {
+    position: relative;
+    right: 25px;
+    content: ">";
+    color: #800006;
+  } */
+
+
+  footer ul li::before{ 
+    content: "\00BB";
+    color: #800006;
+    position: absolute;
+    right: 105%;
+} 
+
+
+footer ul li a {
+    color: #800006;
+    text-decoration: none;
+    font-weight: 700;
+    display: block;
+}
+
+footer ul li a:hover {
+    background-color: #800006;
+    color: #fff;
+}
+
+
+
+
