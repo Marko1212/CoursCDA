@@ -33,3 +33,16 @@
 #paragraphe {
     padding-top: 30px;
 }
+
+.flex {
+    display: flex;
+    justify-content: space-around;
+    margin: 20px auto;
+}
+
+.rectangle {
+    margin: 20px auto;
+    background-color: red;
+    width: 300px;
+    height: 10px;
+}
