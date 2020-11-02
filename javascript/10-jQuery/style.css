@@ -6,12 +6,15 @@
 }
 
 .on {
-    color: white;
-    background-color: black;
+    color: black;
+    background-color: lightgrey;
+    box-shadow: 3px 3px 3px lightgrey;
 }
 
 .off {
-    background-color: gray;
+    color:white;
+    background-color: darkgray;
+    box-shadow: none;
   }
 
 .button-container {
