@@ -50,6 +50,8 @@ $(function () {
         else {
             selectedGifts = selectedGifts.filter(x => x != $this.text());
             $('ul.selected-gifts li:contains(' + $this.text() + ')').remove();
+
+            // Solution alternative
   /*           $listSelector.empty();
             for (var cadeau of selectedGifts) {
                 var element = "<li>" + cadeau + "</li>";
