@@ -28,6 +28,10 @@ body {
 
 }
 
+.rounded-xl {
+    border-radius: 15px;
+}
+
 .bg-portfolio img {
     margin-bottom: 50px;
 }
@@ -63,7 +67,6 @@ en inline ! c'est une alternative au first-child et last-child ci-dessus ! */
     padding: 6rem 0;
 }
 .bg-project img {
-    border-radius: 3%;
     width: 100%;
   }
 
@@ -74,11 +77,10 @@ en inline ! c'est une alternative au first-child et last-child ci-dessus ! */
   }
 
   .bg-project .filter {
-      background-color: rgba(152,251,25, 0.8);
+      background-color: rgba(26, 188, 156, 0.75);
       position: absolute;
       width: 100%;
       height: 100%;
-      border-radius: 3%;
       display: flex;
       justify-content: center;
       align-items: center;
