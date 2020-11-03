@@ -1,9 +1,19 @@
 
+ul {
+    list-style-type: none;
+}
 
 .page {
     margin: auto;
     width: 1000px;
+    text-align: center;
 }
+
+.barrer {
+    text-decoration: line-through;
+}
+
+/*
 
 .on {
     color: black;
@@ -53,3 +63,4 @@
     width: 300px;
     height: 10px;
 }
+ */
