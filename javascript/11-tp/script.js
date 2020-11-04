@@ -30,7 +30,7 @@ $(function () {
     var $listSelector = $(".selected-gifts")
 
     $("ul.cadeaux li").on("click", function (event) {
-        $(".messageCache").hide();
+        $(".message").hide();
         $(this).toggleClass("barrer");
 
         var $this = $(this);
@@ -43,9 +43,8 @@ $(function () {
                 selectedGifts.push($this.text());
                 $listSelector.append(elementToAppend);
             }
+
             else {
-                //alert("Attends ton anniversaire");
-                $(".messageCache").show();
                 $(this).removeClass("barrer");
             }
         }
@@ -54,14 +53,19 @@ $(function () {
             $('ul.selected-gifts li:contains(' + $this.text() + ')').remove();
 
             // Solution alternative :
-  /*           $listSelector.empty();
-            for (var cadeau of selectedGifts) {
-                var element = "<li>" + cadeau + "</li>";
-                $listSelector.append(element);
-            } */
+            /*           $listSelector.empty();
+                      for (var cadeau of selectedGifts) {
+                          var element = "<li>" + cadeau + "</li>";
+                          $listSelector.append(element);
+                      } */
         }
 
         console.log(selectedGifts);
+
+        if (selectedGifts.length === 5) {
+            //alert("Attends ton anniversaire");
+            $(".message").show();
+        }
         $(".andjelija").text("Andjelija a choisi " + selectedGifts.length + " cadeau(x). Il en reste " + (5 - selectedGifts.length) + ".");
     });
 
