@@ -16,7 +16,7 @@ Nous allons créer une liste de Noël pour Fiorella. On aura d'abord une liste d
 1. Fiorella doit pouvoir choisir (click) uniquement 5 cadeaux (pas 10). (Tableau ?)
 2. Quand Fiorella aura choisi un cadeau, cet élément de la liste sera barré. (Une classe CSS ?)
 3. Fiorella peut changer d'avis et "déselectionner" un cadeau. (Tableau pop ou splice ?)
-4. Dès qu'elle aura choisi 5 cadeaux, on affichera un message "Attends ton anniversaire".
+4. Dès qu'elle aura choisi 5 cadeaux, on affichera un message "Attends ton anniversaire" sur la page.
 
 BONUS. Afficher la liste de Fiorella au fur et à mesure dans une 2ème liste (Aide du formateur)
 BONUS. Afficher une phrase "Fiorella a choisi 2 cadeaux. Il en reste 3."
@@ -30,6 +30,7 @@ $(function () {
     var $listSelector = $(".selected-gifts")
 
     $("ul.cadeaux li").on("click", function (event) {
+        $(".messageCache").hide();
         $(this).toggleClass("barrer");
 
         var $this = $(this);
@@ -43,7 +44,8 @@ $(function () {
                 $listSelector.append(elementToAppend);
             }
             else {
-                alert("Attends ton anniversaire");
+                //alert("Attends ton anniversaire");
+                $(".messageCache").show();
                 $(this).removeClass("barrer");
             }
         }
