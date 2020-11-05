@@ -16,4 +16,5 @@ On devra utiliser Github. Voici la liste des fonctionnalités à implémenter :
 - BONUS: Compter les déplacements (en temps réel)
 - BONUS: Ajouter un chronomètre et détecter la fin de la partie
 - BIG BONUS: Adapter le jeu pour que cela fonctionne avec une image (On peut découper une image avec un background image et un background position ; à voir aussi si on peut découper une image en ligne : https://www.imgonline.com.ua/eng/cut-photo-into-pieces.php)
+- Pour redimensionner une image de taille donnée à la taille souhaitée (par exemple : 480x480px): https://www.img2go.com/resize-image
 - BONUS: On arrive sur le jeu, on voit l'image complète, on clique sur jouer, elle se mélange, le chrono se déclenche. On pourra également recommencer la partie.
