@@ -1,0 +1,32 @@
+.main-container {
+  margin: 0 auto;
+  background-image: url(img/PictureKremlin480480.jpg);
+  width: 480px;
+  height: 480px;
+  text-align: center;
+  /*z-index: 1000;*/
+}
+button {
+  width: 120px;
+  height: 120px;
+  /*background: #ccc;*/
+  float: left;
+  margin: 0px;
+  color: #600;
+  font-size: 18px;
+}
+/* button:hover {
+  background: #9cf;
+} */
+.moves, .secondes {
+  color: #900;
+  background-color: #fff;
+  width: 30px;
+  display: inline-block;
+}
+
+span {
+  width: 100%;
+  color: #900;
+  font-family: "Comic Sans MS", cursive;
+}
