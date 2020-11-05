@@ -15,5 +15,5 @@ On devra utiliser Github. Voici la liste des fonctionnalités à implémenter :
 - Autoriser uniquement le déplacement d'un carré s'il est à côté de la zone vide
 - BONUS: Compter les déplacements (en temps réel)
 - BONUS: Ajouter un chronomètre et détecter la fin de la partie
-- BIG BONUS: Adapter le jeu pour que cela fonctionne avec une image (On peut découper une image avec un background image et un background position ; à voir aussi si on peut découper une image en ligne https://www.imgonline.com.ua/eng/cut-photo-into-pieces.php)
+- BIG BONUS: Adapter le jeu pour que cela fonctionne avec une image (On peut découper une image avec un background image et un background position ; à voir aussi si on peut découper une image en ligne : https://www.imgonline.com.ua/eng/cut-photo-into-pieces.php)
 - BONUS: On arrive sur le jeu, on voit l'image complète, on clique sur jouer, elle se mélange, le chrono se déclenche. On pourra également recommencer la partie.
