@@ -10,7 +10,7 @@ $("button").attr("disabled", "disabled");
 
 function jouer() {
 
-
+    $('input').val("Rejouer");
     $("button").attr("disabled", false);
 
     if (timer) timer.stop();
@@ -234,7 +234,7 @@ $(document).ready(function () {
                 timer.stop();
                 //alert("Félicitations tu as gagné au jeu!...");
                 var p = $('<p></p>');
-                p.text('Félicitations, tu as gagné au jeu!');
+                p.text('Félicitations, tu as gagné!');
                 $('.message').append(p);
 
                 $("button").attr("disabled", "disabled");
