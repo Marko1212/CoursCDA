@@ -1,0 +1,53 @@
+ 
+body {
+    font-family: 'Montserrat', sans-serif;
+}
+
+nav .container img {
+    width: 26px;
+    vertical-align: text-bottom;
+    margin-right: 3px;
+}
+
+nav .container > a {
+    font-weight: 700;
+}
+
+.currentLink {
+    font-weight: 700;
+}
+
+.background {
+    background-color: #ebebeb;
+}
+
+.vador {
+    width: 100%;
+}
+
+.background .avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+.lead {
+    font-weight: 900;
+}
+
+.andjelija {
+    padding: 0 15px;
+}
+
+.chat, .messages {
+    position: relative;
+}
+
+.chat.bottom::before, .messages.bottom::before {
+    content: "";
+    position: absolute;
+    left: 15px;
+    right: 15px;
+    bottom: 0;
+    border-bottom: 1px solid #e5e5e5;
+}

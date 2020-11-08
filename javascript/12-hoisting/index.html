@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hoisting</title>
+</head>
+<body>
+    
+    <script>
+        /*
+        Le Hoisting, c'est le Javascript qui va 'remonter' toutes les variables en haut du code
+        */
+        //var prénom
+        //console.log(nom); //erreur
+        //console.log(a); //erreur
+        console.log(prénom); //renvoie undefined mais pas la valeur
+
+        var prénom = 'Andjelija';
+
+      
+
+        console.log(prénom);
+
+        mondeperdu();//les fonctions sont aussi "hoistées"
+
+        function mondeperdu() { // chaque fonction a son "scope", sa portée, sa limite
+            var nom = "Askovic" //accessible uniquement dans la fonction
+            prénom = 'Marko'; // prénom est accessible de partout
+            console.log(prénom);
+
+            function mondeencoreplusperdu() {
+                console.log(prénom + ' ' + nom);
+
+                covid = true; //cette variable est globale est accessible de partout
+                //attention, il faut appeler d'abord la fonction, dans laquelle est définie une
+                // variable de cette façon, avant de rendre
+                //la variable covid accessible de partout. On appelle la fonction ci-dessous
+            }
+
+            mondeencoreplusperdu();
+        }
+
+        //mondeencoreplusperdu();
+
+        for (var i = 0; i < 10; i++) {
+            console.log(i);
+        }
+
+        console.log("for var : " + i); // 10
+
+        /* 
+        Pourquoi utiliser let en JavaScript?
+        let bloque une variable dans un bloc : if, for, while...
+        */
+
+        for (let j = 0; j < 10; j++) {
+            console.log(j);
+        }
+
+        //console.log("for let : " + j); // erreur
+
+        //on a aussi des constantes: variables qui ne varient pas
+        //la const est également bloquée dans un bloc: if, for, while...
+
+        if (true) {
+            const PI = 3.14;
+            //PI = 3.15 //erreur
+            console.log(PI);
+        }
+
+        //console.log(b); // Uncaught ReferenceError: Cannot access 'b' before initialization
+        //let b = 65; 
+
+      
+        //let and const variables are hoisted but not initialized during hoisting unlike var (hoisted and initialized with undefined)
+        //so, unlike var, if we try to access a hoisted let or const  : an error will occur (see above)
+
+
+        let c;
+        console.log(c); // undefined
+
+        //console.log(PI); //erreur
+
+    </script>
+</body>
+</html>
