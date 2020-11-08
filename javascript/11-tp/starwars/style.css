@@ -39,11 +39,11 @@ nav .container > a {
     padding: 0 15px;
 }
 
-.chat, .messages {
+.chat, .messages, .likes {
     position: relative;
 }
 
-.chat.bottom::before, .messages.bottom::before {
+.chat.bottom::before, .messages.bottom::before, .likes.bottom::before {
     content: "";
     position: absolute;
     left: 15px;
