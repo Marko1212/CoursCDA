@@ -9,6 +9,10 @@ nav .container img {
     margin-right: 3px;
 }
 
+.main-container {
+    border-radius: 20px;
+}
+
 nav .container > a {
     font-weight: 700;
 }
@@ -19,6 +23,7 @@ nav .container > a {
 
 .background {
     background-color: #ebebeb;
+    padding-top: 40px;
 }
 
 .vador {

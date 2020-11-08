@@ -1,102 +1,115 @@
 <!DOCTYPE html>
 <html lang="fr">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>TP Star Wars</title>
-        <link rel="shortcut icon" href="data:image/x-icon;," type="image/x-icon"> 
-        <link rel="stylesheet" href="bootstrap.min.css" type="text/css" />
-        <link
-            href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap"
-            rel="stylesheet"
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TP Star Wars</title>
+    <link rel="shortcut icon" href="data:image/x-icon;," type="image/x-icon" />
+    <link rel="stylesheet" href="bootstrap.min.css" type="text/css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <!--on choisit la regular et bold font family Montserrat; le bold est alors de meilleure qualité, ressemble plus à la maquette -->
+    <!--font awesome-->
+    <link
+      rel="stylesheet"
+      href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+    />
+    <link rel="stylesheet" href="style.css" type="text/css" />
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light pt-4 pb-4">
+      <!--pt-1 : padding top 0.25 rem; pb-1 : padding bottom 0.25 rem; -->
+      <!--pt-4 : 1.5 rem ; pb-4 : 1.5 rem ; -->
+      <!--bg-dark: background dark ; navbar-dark : couleur du texte correspondant au bg-dark, donc, couleur white -->
+      <!--source : https://getbootstrap.com/docs/4.5/utilities/spacing/-->
+      <div class="container p-0">
+        <!-- .container est une classe bootstrap, qui a margin: auto, donc, pas besoin qu'on l'écrive nous mêmes dans le css-->
+        <a class="navbar-brand" href="#"
+          ><img src="img/logo.png" alt="logo" />Social Troopers</a
+        >
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarNav"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link currentLink" href="#">Accueil</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Nos posts</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link pr-0" href="#">Mon compte</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <!-- /.container -->
+    </nav>
+    <div class="background">
+      <div class="container bg-white main-container">
+        <div class="row bottom">
+          <div class="col-12 col-lg-8 p-0">
+            <img
+              src="img/dark-vador.jpg"
+              alt="dark vador"
+              class="img-fluid vador"
             />
-        <!--on choisit la regular et bold font family Montserrat; le bold est alors de meilleure qualité, ressemble plus à la maquette -->
-        <!--font awesome-->
-        <link
-            rel="stylesheet"
-            href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
-            />
-        <link rel="stylesheet" href="style.css" type="text/css" />
-    </head>
-    <body>
-        <nav
-            class="navbar navbar-expand-lg navbar-light bg-light pt-4 pb-4"
-            >
-            <!--pt-1 : padding top 0.25 rem; pb-1 : padding bottom 0.25 rem; -->
-            <!--pt-4 : 1.5 rem ; pb-4 : 1.5 rem ; -->
-            <!--bg-dark: background dark ; navbar-dark : couleur du texte correspondant au bg-dark, donc, couleur white -->
-            <!--source : https://getbootstrap.com/docs/4.5/utilities/spacing/-->
-            <div class="container p-0">
-                <!-- .container est une classe bootstrap, qui a margin: auto, donc, pas besoin qu'on l'écrive nous mêmes dans le css-->
-                <a class="navbar-brand" href="#"><img src="img/logo.png" alt="logo">Social Troopers</a>
-                <button
-                    class="navbar-toggler"
-                    type="button"
-                    data-toggle="collapse"
-                    data-target="#navbarNav"
-                    >
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav ml-auto">
-                        <li class="nav-item">
-                            <a class="nav-link currentLink" href="#">Accueil</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Nos posts</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link pr-0" href="#">Mon compte</a>
-                        </li>
-                    </ul>
-                </div>
+          </div>
+          <div class="col-12 col-lg-4 p-0">
+            <div class="container d-flex chat bottom">
+              <div class="my-4 mr-auto">
+                <img class="avatar" src="img/avatar.jpg" alt="avatar" />
+                <p class="lead d-inline ml-3">Mr Chat</p>
+              </div>
+              <div class="my-4">
+                <input type="submit" value="Follow" class="btn btn-primary" />
+              </div>
             </div>
-            <!-- /.container -->
-        </nav>
-        <div class="background">
-            <div class="container bg-white">
-                <div class="row bottom">
-                    <div class="col-12 col-lg-8 p-0">
-                        <img src="img/dark-vador.jpg" alt="dark vador" class="img-fluid vador">
-                    </div>
-                    <div class="col-12 col-lg-4 p-0">
-                        <div class="container d-flex chat bottom">
-                            <div class="my-4 mr-auto">
-                                <img class="avatar" src="img/avatar.jpg" alt="avatar">
-                                <p class="lead d-inline ml-3">Mr Chat</p>
-                            </div>
-                            <div class="my-4">
-                                <input type="submit" value="Follow" class="btn btn-primary" />
-                            </div>      
-                        </div>
-                        <div class="messages bottom py-3">
-                            <p class="andjelija">
-                                <strong>Andjelija</strong> lorem ipsum dolor sit amet consectetur adipisicing elit. Illo voluptatum aliquam 
-                                aliquid odio ducimus consectetur, quos expedita repellat laudantium veritatis quae 
-                                dolorum natus perspiciatis adipisci ab voluptate at accusamus.
-                            </p>
-                        </div>
-                        <div class="likes bottom py-4">
-                            <div class="icons"><i class="far fa-lg fa-heart"></i><i class="far fa-lg fa-comment"></i></div>
-                            <p class="numberOfLikes">
-                                <strong>0</strong> Like(s)
-                            </p>
-                        </div>
-                        <div class="comment-field py-4">
-                            <textarea id="comment" name="comment" placeholder="Ajouter un commentaire..." rows="4"></textarea>
-                            <button type="button" class="btn btn-primary">Ajouter</button>
-                        </div>
-                    </div>
-                </div>
-                <div class="copyright py-4 text-center">
-                    <div class="container">
-                        <small>Copyright &copy; 2020.</small>
-                        <!-- on peut également obtenir @ avec font awesome : <i class="fal fa-copyright"></i> -->
-                    </div>
-                </div>
+            <div class="messages bottom py-3">
+              <p class="andjelija">
+                <strong>Andjelija</strong> lorem ipsum dolor sit amet
+                consectetur adipisicing elit. Illo voluptatum aliquam aliquid
+                odio ducimus consectetur, quos expedita repellat laudantium
+                veritatis quae dolorum natus perspiciatis adipisci ab voluptate
+                at accusamus.
+              </p>
             </div>
-            <script src="jquery-3.5.1.min.js"></script>
-            <script src="bootstrap.bundle.min.js"></script>
-            <script src="script.js"></script>
-    </body>
+            <div class="likes bottom py-4">
+              <div class="icons">
+                <i class="far fa-lg fa-heart"></i
+                ><i class="far fa-lg fa-comment"></i>
+              </div>
+              <p class="numberOfLikes"><strong>0</strong> Like(s)</p>
+            </div>
+            <div class="comment-field py-4">
+              <textarea
+                id="comment"
+                name="comment"
+                placeholder="Ajouter un commentaire..."
+                rows="4"
+              ></textarea>
+              <button type="button" class="btn btn-primary">Ajouter</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="copyright py-4 text-center">
+        <div class="container">
+          <small>Copyright &copy; 2020.</small>
+          <!-- on peut également obtenir @ avec font awesome : <i class="fal fa-copyright"></i> -->
+        </div>
+      </div>
+    </div>
+    <script src="jquery-3.5.1.min.js"></script>
+    <script src="bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+  </body>
 </html>
