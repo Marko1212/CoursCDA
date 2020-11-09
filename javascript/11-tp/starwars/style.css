@@ -37,7 +37,7 @@ nav .container > a {
     width: 50px;
     height: 50px;
     border-radius: 50%;
-    object-fit: cover; /*rend l'image plus claire si à la base, l'image n'a pas la même hauteur et largeur, comme ici */
+    object-fit: cover; /*rend l'image plus claire si, à la base, l'image n'a pas la même hauteur et largeur en px, comme ici */
 }
 
 .lead {
