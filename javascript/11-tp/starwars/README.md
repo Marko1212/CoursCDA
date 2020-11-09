@@ -1,5 +1,5 @@
 
-# TP Back to HTML
+# TP Star Wars
 
 Nous allons intégrer une page en HTML / CSS / jQuery. Le client nous a fournit une maquette mais il nous annonce que
 nous sommes totalement libre dans notre créativité, tant que l'on garde les fonctionnalités essentielles.
