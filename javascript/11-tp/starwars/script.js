@@ -29,8 +29,18 @@ $(function () {
 
   $('button').click(function () {
     var contenu = $('#comment').val();
-    var prénom = contenu.slice(0, contenu.indexOf(" "));
-    var resteDuContenu = contenu.substring(contenu.indexOf(" "), contenu.length);
+    var prénom;
+    var resteDuContenu;
+    if (contenu.indexOf(" ") === -1) {
+      prénom = contenu;
+      resteDuContenu = "";
+
+    } else {
+      prénom = contenu.slice(0, contenu.indexOf(" "));
+      resteDuContenu = contenu.substring(contenu.indexOf(" "), contenu.length);
+    }
+
+    
     console.log(prénom);
     console.log(resteDuContenu);
 
