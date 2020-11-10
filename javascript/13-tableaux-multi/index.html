@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=
+    , initial-scale=1.0"
+    />
+    <link rel="shortcut icon" href="" />
+    <title>Tableaux multidimensionnels</title>
+  </head>
+  <body>
+    <script>
+      var products = ["iPhone 12", "Galaxy 520", "Xiaomi"];
+      var prices = [1000, 1000, 500];
+
+      var products = [
+        { name: "iPhone 12", price: 1000 },
+        { name: "Galaxy S20", price: 1000 },
+        { name: "Xiaomi", price: 500 },
+      ];
+
+      // Afficher le prix du Galaxy S20
+
+      console.log(products[1].price);
+      console.log(products[2]["name"]);
+
+      var sizes = [
+        ["64go", "128go", "256go"],
+        ["32go", "64go"],
+        ["512go", "1to"],
+      ];
+
+      console.info(sizes[1][1]);
+
+      var productsWithSizes = [
+        { name: "iPhone 12", price: 1000, sizes: ["64go", "128go", "256go"] },
+        { name: "Galaxy S20", price: 1000, sizes: ["32go", "64go"] },
+        { name: "Xiaomi", price: 500, sizes: ["512go", "1to"] },
+      ];
+
+      // Afficher le prix du Galaxy S20
+
+      console.info(productsWithSizes[0]["sizes"][1]);
+      console.info(productsWithSizes[0].sizes[1]);
+
+      /*
+       * Objectif: Trouver le nombre 123
+       * Ecrire le bon code en accédant à l'objet "monObjetFou" et aux tableaux pour afficher le nombre 123
+       */
+      var monObjetFou = {
+        nom: "Un objet ridicule",
+        "un tableau": [7, 9, { objectif: "confusion", nombre: 123 }, 3.3],
+        "animal au hasard": "Requin banane",
+      };
+
+      console.info(monObjetFou["un tableau"][2]["nombre"]);
+      console.log(monObjetFou["un tableau"][2].nombre);
+    
+      for (var i = 0; i < productsWithSizes.length; i++){
+          console.log(productsWithSizes[i].name + " existe en " + productsWithSizes[i].sizes.join(', '));
+      }
+
+      /*
+      Afficher un jeu de morpion
+
+      */
+
+      var morpion = [
+          ['O','X', 'O'],
+          ['X','O', 'X'],
+          ['O','X', 'O'],
+      ];
+
+      // Afficher le résultat du morpion dans la console
+
+/* X | X | O | 
+X | O | X | 
+O | X | X |  */
+
+      for (var i = 0; i < morpion.length; i++) {
+          console.log(morpion[i].join(" | ") + " | ");
+      }
+
+      // Ecrire un code qui permet de savoir si le morpion est gagnant pour les O
+
+     if (morpion[0][0] === morpion[1][1] && morpion[1][1] === morpion[2][2] && morpion[0][0] === 'O') {
+        console.info('Tu as gagné sur la diagonale droite!');
+      }
+
+      if (morpion[0][2] === morpion[1][1] && morpion[1][1] === morpion[2][0] && morpion[0][2] === 'O') {
+        console.info('Tu as gagné sur la diagonale gauche!');
+      }
+
+      var counter = 0, counterBis = 0;
+    
+      for (let i = 0; i < morpion.length; i++) {
+          for (let j = 0; j < morpion[i].length; j++) {
+            if (morpion[i][i] === 'O' && i === j ) {
+                console.log(i);
+                counter++;
+            }
+          }
+      }
+
+      for (let i = 0; i < morpion.length; i++) {
+          for (let j = 0; j < morpion[i].length; j++) {
+            if (morpion[j][i] === 'O' && i + j === (morpion.length - 1) ) {
+                console.log(i + " " + j);
+                counterBis++;
+            }
+          }
+      }
+      
+      if (counter === morpion.length || counterBis === morpion.length) console.info('tu as gagné!');
+
+    </script>
+  </body>
+</html>

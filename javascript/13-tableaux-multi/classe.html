@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+/*TP Gestion de classe
+
+Nous allons créer un tableau contenant des élèves. On stockera le nom de l'élève ainsi que ses notes.
+
+var students = [
+    ['Fiorella', [20, 18, 19, 17]],
+    ['Matthieu', [15, 16, 14, 12, 7]],
+    ['Marina', [17, 20, 13, 18, 13, 17]],
+];
+
+
+- Calculer la moyenne de chacun et afficher :
+    Fiorella a X de moyenne.
+    Matthieu a X de moyenne.
+    Marina a X de moyenne.
+
+- Quel(s) élève(s) ont la meilleure note ?
+- BONUS: Faites la même chose en stockant des objets
+
+*/
+
+var students = [
+    ['Fiorella', [20, 18, 19, 17]],
+    ['Matthieu', [15, 16, 14, 12, 7]],
+    ['Marina', [17, 20, 13, 18, 13, 17]],
+];
+
+
+function moyenne(notes) {
+    let moyenne = 0;
+    for (let note of notes) {
+        moyenne += note;
+    }
+    return moyenne / notes.length;
+}
+
+for (let student of students) {
+    console.log(student[0] + " a " + moyenne(student[1]) + " de moyenne.");
+}
+
+//trouver la meilleure note de chaque élève
+
+let meilleuresNotes = [];
+
+for (let student of students) {
+    let maxNote = 0;
+    for (let note of student[1]) {
+        if (note > maxNote) 
+            maxNote = note;
+    }
+    meilleuresNotes.push(maxNote);
+}
+
+console.log(meilleuresNotes);
+
+//trouver la meilleure note
+
+let meilleureNote = 0;
+
+for (let note of meilleuresNotes) {
+    if (note > meilleureNote) 
+        meilleureNote = note;
+}
+
+console.log("La meilleure note est " + meilleureNote);
+
+//afficher les étudiants qui ont la meilleure note
+console.log("Les étudiant(s) qui ont la meilleure note sont :");
+for (let student of students) {
+    if (student[1].includes(meilleureNote))
+    console.log(student[0]);
+}
+
+//BONUS : MEME CHOSE AVEC LES OBJETS
+
+var studentsList = [
+    {name: 'Fiorella', notes : [20, 18, 19, 17]},
+    {name: 'Matthieu', notes : [15, 16, 14, 12, 7]},
+    {name: 'Marina', notes : [17, 20, 13, 18, 13, 17]}
+];
+
+for (let student of studentsList) {
+    console.log(student['name'] + " a " + moyenne(student['notes']) + " de moyenne.");
+}
+
+//trouver la meilleure note de chaque élève
+
+let meilleuresNotesBis = [];
+
+for (let student of studentsList) {
+    let maxNoteBis = 0;
+    for (let note of student['notes']) {
+        if (note > maxNoteBis) 
+            maxNoteBis = note;
+    }
+    meilleuresNotesBis.push(maxNoteBis);
+}
+
+console.log(meilleuresNotesBis);
+
+//trouver la meilleure note
+
+let meilleureNoteBis = 0;
+
+for (let note of meilleuresNotesBis) {
+    if (note > meilleureNoteBis) 
+        meilleureNoteBis = note;
+}
+
+console.log("La meilleure note est " + meilleureNoteBis);
+
+//afficher les étudiants qui ont la meilleure note
+console.log("Les étudiant(s) qui ont la meilleure note sont :");
+for (let student of studentsList) {
+    if (student['notes'].includes(meilleureNoteBis))
+    console.log(student['name']);
+}
+
+
+    </script>
+  </body>
+</html>

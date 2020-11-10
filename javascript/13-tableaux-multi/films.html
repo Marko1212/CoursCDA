@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Films</title>
+  </head>
+  <body>
+    <script>
+      /*
+       * Gestion de films et de séries
+       *
+       * Dans un film, on va stocker
+       *  - le titre (chaine)
+       *  - la date de sortie (année)
+       *  - la durée (minutes)
+       *  - la liste des acteurs (tableau de chaines)
+       *  - Et le format (DVD, VOD, Blu-Ray) (chaine)
+       *  - Le genre (chaine)
+       */
+      var films = [
+        {
+          titre: "Star Wars: Un nouvel espoir",
+          dateDeSortie: 1977,
+          duree: 125,
+          acteurs: ["Mark Hamill", "Carrie Fisher", "Harrison Ford"],
+          format: "VOD",
+          genre: "Science-fiction",
+        },
+        {
+          titre: "Harry Potter à l'école des sorciers",
+          dateDeSortie: 2001,
+          duree: 152,
+          acteurs: ["Daniel Radcliffe", "Rupert Grint", "Emma Watson"],
+          format: "DVD",
+          genre: "Science-fiction",
+        },
+        {
+          titre: "Le monde de Nemo",
+          dateDeSortie: 2003,
+          duree: 101,
+          acteurs: ["Albert Brooks", "Nemo", "Dorie"],
+          format: "Blu-ray",
+          genre: "Animation",
+        },
+        {
+          titre: "Harry Potter et toutes ses aventures",
+          dateDeSortie: 2012,
+          duree: 133,
+          acteurs: ["Daniel Radcliffe", "Rupert Grint", "Emma Watson"],
+          format: "DVD",
+          genre: "Science-fiction",
+        },
+        {
+          titre: "Return of Jedi",
+          dateDeSortie: 1987,
+          duree: 130,
+          acteurs: ["Mark Hamill", "Carrie Fisher", "Harrison Ford"],
+          format: "VOD",
+          genre: "Science-fiction",
+        },
+      ];
+
+      // - Afficher la liste des films (le nom et l'année de sortie)
+
+      for (let film of films) {
+        console.log(
+          "Nom du film : " +
+            film.titre +
+            ", l'année de sortie : " +
+            film.dateDeSortie
+        );
+      }
+
+      // - Afficher les films sortis avant 2000
+
+      console.log("Films sortis avant 2000 : ");
+      for (let film of films) {
+        if (film.dateDeSortie < 2000) {
+          console.log(
+            "Nom du film : " +
+              film.titre +
+              ", l'année de sortie : " +
+              film.dateDeSortie
+          );
+        }
+      }
+      // - Afficher les films qui durent plus de 2h
+
+      console.log("Films de durée supérieure à 2h : ");
+      for (let film of films) {
+        if (film.duree > 120) {
+          console.log("Nom du film : " + film.titre);
+        }
+      }
+
+      // - Afficher la liste des acteurs de Harry Potter
+
+      console.log("Liste des acteurs de Harry Potter (toute la saga s'il y en a plusieurs) : ");
+      for (let film of films) {
+        if (film.titre.includes("Harry Potter")) {
+          console.log("Titre : " + film.titre + " :")
+          console.log("Acteurs : " + film.acteurs.join(", "));
+        }
+      }
+
+      // - Afficher uniquement les Blu-ray
+
+      console.log("Liste des films en format Blu-ray : ");
+      for (let film of films) {
+        if (film.format === "Blu-ray") {
+          console.log(film.titre);
+        }
+      }
+
+      // - Afficher la durée de chaque film en heures (1h41 pour 101) Pourquoi pas une fonction ?
+
+      function formatDuree(minutes) {
+        var hours = minutes / 60;
+        var rhours = Math.floor(hours);
+        var minutes = (hours - rhours) * 60;
+        var rminutes = Math.round(minutes);
+        if (rminutes < 10) rminutes = "0" + rminutes;
+        return rhours + "h" + rminutes + " minutes";
+      }
+
+      console.log("Durée des films en heures : ");
+      for (let film of films) {
+        console.log(film.titre + " : " + formatDuree(film.duree));
+      }
+
+      // - Afficher tous les acteurs qui ont joué dans un film de Science-fiction
+
+      console.log(
+        "Liste des acteurs qui ont joué dans un film de Science-fiction : "
+      );
+
+      var result = [];
+
+      for (let film of films) {
+        if (film.genre === "Science-fiction") {
+          for (let actor of film.acteurs) {
+            if (!result.includes(actor)) {
+              result.push(actor);
+            }
+          }
+        }
+      }
+
+      console.log(result.join(", "));
+
+      // - Afficher toutes les catégories ainsi que la totalité de la durée de leur film
+
+      var categories = [];
+
+      for (let film of films) {
+            if (!categories.includes(film.genre)) {
+              categories.push(film.genre);
+            }
+          }
+
+    console.log(categories);
+
+    const dureesTotalesParCategorie = {};
+     
+      for (const key of categories) {
+        console.log(key);
+        dureesTotalesParCategorie[key] = 0;
+      }
+
+      console.log(dureesTotalesParCategorie);
+
+     for (let film of films) {
+         
+        dureesTotalesParCategorie[film.genre] = dureesTotalesParCategorie[film.genre] + film.duree;
+        console.log(dureesTotalesParCategorie[film.genre]);
+
+     }
+
+     console.log(dureesTotalesParCategorie);
+
+     for (let genre in dureesTotalesParCategorie) {
+         console.log(genre + " : " + formatDuree(dureesTotalesParCategorie[genre]));
+     }
+
+   
+
+      //    Animation: 1h41minutes
+      //    Science-fiction: 6h47 minutes
+    </script>
+  </body>
+</html>
