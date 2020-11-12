@@ -1,0 +1,93 @@
+ 
+body {
+    font-family: 'Montserrat', sans-serif;
+}
+
+nav .container img {
+    width: 26px;
+    vertical-align: text-bottom;
+    margin-right: 3px;
+}
+
+.main-container {
+    border-radius: 20px;
+}
+
+nav .container > a {
+    font-weight: 700;
+}
+
+.currentLink {
+    font-weight: 700;
+}
+
+.background {
+    background-color: #ebebeb;
+    padding-top: 40px;
+}
+
+.vador {
+    width: 100%;
+    height: 100%;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+}
+
+.background .avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover; /*rend l'image plus claire si, à la base, l'image n'a pas la même hauteur et largeur en px, comme ici */
+}
+
+.lead {
+    font-weight: 900;
+}
+
+.andjelija, .icons, .numberOfLikes, .comment-field {
+    padding: 0 15px;
+}
+
+.numberOfLikes {
+    margin-top: 15px;
+    font-weight: 900;
+    font-size: 14px;
+    margin-bottom: 0px;
+}
+
+.chat, .messages, .likes {
+    position: relative;
+}
+
+.chat.bottom::before, .messages.bottom::before, .likes.bottom::before {
+    content: "";
+    position: absolute;
+    left: 15px;
+    right: 15px;
+    bottom: 0;
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.likes .icons .fa-heart {
+    margin-right: 50px;
+}
+
+.comment-field {
+    display: none;
+}
+
+.comment-field textarea {
+    display: block;
+    width: 100%;
+    font-size: 14px;
+    padding: 15px;
+}
+
+.comment-field .btn-primary {
+    width: 100%;
+    margin-top: 20px;
+}
+
+.messages {
+    word-wrap: break-word;
+}

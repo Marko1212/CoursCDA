@@ -1,0 +1,4 @@
+# .htaccess permet de faire des redirections, permet de cacher le dossier .git
+# car ce dossier peut contenir des informations sensibles et confidentielles sur le site
+
+RedirectMatch 404 /\.git
