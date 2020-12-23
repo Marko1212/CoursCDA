@@ -1,0 +1,14 @@
+body {
+  background-color: blue; }
+
+nav ul {
+  padding: 0; }
+nav a {
+  color: red; }
+  nav a:hover {
+    color: yellow; }
+
+.navbar li {
+  padding: 10px; }
+
+/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,28 @@
+
+$color: blue;
+$padding: 20px - 10px;
+
+
+// On doit compiler le code avec la commande
+// sass --watch style.scss:style.css
+// sass crée le fichier style.css
+
+body {
+    background-color: $color;
+}
+
+nav {
+    ul {
+        padding: 0;
+    }
+
+    a {
+        color: red;
+
+        &:hover {
+            color: yellow;
+        }
+    }
+}
+
+@import 'scss/navbar';
