@@ -11,6 +11,7 @@ nav a {
 .navbar li {
   padding: 10px; }
 
-/* le map permet de débugger le scss et css */
+/* le map ci-dessous permet de voir dans la console, où la classe de l'élélement
+se trouve dans le fichier scss , afin de pouvoir faire des modifs. */
 
 /*# sourceMappingURL=style.css.map */
